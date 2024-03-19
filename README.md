@@ -1,13 +1,7 @@
 # Description
 (Jump directly to [How to Test](#how-to-test))
 
-My codes and input files are kept in the `genai` directory. All unit tests are kept in the `test` directory.
-
-## <ins>Preparation</ins>
-
-I contributed to [Ganga](https://github.com/ganga-devs/ganga). While working on it, I was able to familiarize myself with ganga’s [documentation](https://ganga.readthedocs.io/en/latest/index.html) and source code. I was able to contribute to 2 issues, opened 3 new issues and made 4 pull requests.
-
-After that, I set up the GangaGSoC2024 project on my local machine.
+Codes and input files are kept in the `genai` directory. All unit tests are kept in the `test` directory.
 
 ## <ins>Initial Task</ins>
 
@@ -58,10 +52,6 @@ The script `hello.py` runs a default ‘Hello World’ job in Ganga on `Local` b
 ## <ins>Interfacing Ganga</ins>
 
 For this task, I chose the LLM [deepseek-coder-1.3b-instruct](https://github.com/deepseek-ai/DeepSeek-Coder). This model is trained for code generation and completion.
-
-### Preparation
-
-At first, I [studied the basics of Large Language Models](#additional-references) (LLM). I read about how they are trained, fine-tuned, sometimes optimized for performance ([quantized](https://towardsdatascience.com/which-quantization-method-is-right-for-you-gptq-vs-gguf-vs-awq-c4cd9d77d5be)) and what LLM hallucination means. I also crafted a **prompt** (see [Appendix B: Prompt](#appendix-b-prompt)) to feed the LLM.
 
 ### Shortlist LLMs
 
