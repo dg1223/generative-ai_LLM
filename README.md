@@ -1,13 +1,11 @@
-# What I Have Done
+# Description
 (Jump directly to [How to Test](#how-to-test))
 
-This is a summary of what I have done to complete the challenge for GangaGSoC2024.
-
-My codes and input files for this challenge are kept in the `genai` directory. All unit tests are kept in the `test` directory.
+My codes and input files are kept in the `genai` directory. All unit tests are kept in the `test` directory.
 
 ## <ins>Preparation</ins>
 
-To prepare for the challenge, I contributed to [Ganga](https://github.com/ganga-devs/ganga). While working on it, I was able to familiarize myself with ganga’s [documentation](https://ganga.readthedocs.io/en/latest/index.html) and source code. I was able to contribute to 2 issues, opened 3 new issues and made 4 pull requests.
+I contributed to [Ganga](https://github.com/ganga-devs/ganga). While working on it, I was able to familiarize myself with ganga’s [documentation](https://ganga.readthedocs.io/en/latest/index.html) and source code. I was able to contribute to 2 issues, opened 3 new issues and made 4 pull requests.
 
 After that, I set up the GangaGSoC2024 project on my local machine.
 
@@ -53,7 +51,7 @@ The script `hello.py` runs a default ‘Hello World’ job in Ganga on `Local` b
 ### Testing
 
 - There are 4 test files that contain 17 unit tests.
-- The files `test_Hello.py`, `test_SplitPDF.py` and `test_CountIt.py` contain tests that demonstrate if each unit that contribute to executing the intial challenge tasks is working.
+- The files `test_Hello.py`, `test_SplitPDF.py` and `test_CountIt.py` contain tests that demonstrate if each unit that contribute to executing the tasks is working.
 - The file `test_CompleteSystem.py` contains 2 unit tests. These tests make complete system calls to demonstrate if the subtasks [split PDF](#split-pdf) and [Count word frequency](#count-word-frequency) are getting executed properly.
 - I used the `sleep_until_completed` function from ganga’s core testing framework to wait for job completion before making post-job assertions.
 
@@ -63,7 +61,7 @@ For this task, I chose the LLM [deepseek-coder-1.3b-instruct](https://github.com
 
 ### Preparation
 
-At first, I [studied the basics of Large Language Models](#additional-references) (LLM). I read about how they are trained, fine-tuned, sometimes optimized for performance ([quantized](https://towardsdatascience.com/which-quantization-method-is-right-for-you-gptq-vs-gguf-vs-awq-c4cd9d77d5be)) and what LLM hallucination means. I also crafted a **prompt** (see [Appendix B: Prompt](#appendix-b-prompt)) to feed the LLM by following instructions given on the challenge page.
+At first, I [studied the basics of Large Language Models](#additional-references) (LLM). I read about how they are trained, fine-tuned, sometimes optimized for performance ([quantized](https://towardsdatascience.com/which-quantization-method-is-right-for-you-gptq-vs-gguf-vs-awq-c4cd9d77d5be)) and what LLM hallucination means. I also crafted a **prompt** (see [Appendix B: Prompt](#appendix-b-prompt)) to feed the LLM.
 
 ### Shortlist LLMs
 
@@ -85,7 +83,7 @@ I faced some drawbacks and challenges while testing the model.
 - It would not use the bash script that it wrote as an argument to the ganga job. Instead, it kept passing the Python script as the argument to `File` or started hallucinating.
 - It used different types of markers to delineate the different code snippets. This issue made parsing its output to extract only the codes somewhat challenging.
 
-### <ins>Complete the Challenge Task</ins>
+### <ins>Complete the Task</ins>
 
 With the LLM selected and a working prompt crafted, I created two Python scripts, `InterfaceGanga.py` and `run_InterfaceGanga.py`, to programmatically generate output from the LLM. I also created a test file `test_GangaLLM.py` that executes a unit test to examine if the proposed code by the LLM tries to execute the job in Ganga.
 
@@ -100,7 +98,7 @@ With the LLM selected and a working prompt crafted, I created two Python scripts
     - Write the snippets to appropriate scripts
 - `run_InterfaceGanga.py`
     
-    Creates an `InterfaceGanga` object to generate code for the challenge task using the LLM and store them as scripts in the `genai` directory.
+    Creates an `InterfaceGanga` object to generate code for the task using the LLM and store them as scripts in the `genai` directory.
     
 - `test_GangaLLM.py`
     
@@ -324,7 +322,7 @@ There were 2 edge cases that I needed to address to get the correct word count. 
 
 ## ‘**Interfacing Ganga**’
 
-> The purpose of this challenge is to demonstrate that you can communicate with a Large Language Model in a programmatic way.
+> The purpose is to demonstrate that you can communicate with a Large Language Model in a programmatic way.
 > 
 
 The most straightforward way to test this task is to run the corresponding unit test. If it passes, then the task is complete.
