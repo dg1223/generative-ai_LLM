@@ -1,5 +1,5 @@
 # Description
-(Jump directly to [How to Test](#how-to-test))
+**(Jump directly to [How to Test](#how-to-test))**
 
 Codes and input files are kept in the `genai` directory. All unit tests are kept in the `test` directory.
 
